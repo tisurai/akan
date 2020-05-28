@@ -105,3 +105,11 @@ body {
     width: 350px;
     font-family: 'Josefin Sans', sans-serif;
 }
+
+.color-col {
+    background-color: #fffd;
+    background-image:url('../img/grass-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
