@@ -131,7 +131,12 @@ function validation() {
 }
 
 function getName() {
-	// The formula used to find the date is  (yearcode + monthcode + centurycode + date - leapyearcode) % 7
+    // The formula used to find the date is  
+    // dayBorn = (yearCode + monthCode + centuryCode + date - leapYearCode) % 7
+	var maleName = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+	var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+	var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var monthCodeArray = ["0","3","3","6","1","4","6","2","5","0","3","5"];
 	var day = document.getElementById("day").value;
 	var month = document.getElementById("month").value;
 	var year = document.getElementById("year").value;
@@ -140,7 +145,9 @@ function getName() {
 	var textCC = year.slice(0,2);
 	var textYY = year.slice(2,4);  
 	var textMM = month;
-	var textDD = day;
+    var textDD = day;
+    
+    // make sure the variables are integers
 	var CC = parseInt(textCC);
 	var YY = parseInt(textYY);
 	var MM = parseInt(textMM);
@@ -149,14 +156,9 @@ function getName() {
 	var monthCode = 0;
 	var centuryCode = 0;
 	var leapYearCode = 0;
-	//var dateNumber = day;
-	var isLeapYear = checkLeapYear(year);
-	var formulaDate = 0;
 
-	var maleName = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
-	var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
-	var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var monthCodeArray = ["0","3","3","6","1","4","6","2","5","0","3","5"];
+    // determine if it was a leap year
+	var isLeapYear = checkLeapYear(year);
 
     // determine the year code
     // if the year is 00, e.g. 1900 set year code to zerp
@@ -197,5 +199,46 @@ function getName() {
 
 	if((isLeapYear == true) && (monthCode == 0 || monthCode == 1)){
   	    leapYearCode = 1;
+    }
+    
+    // subtract the leap year code first before determining the final day
+    var subTotal = Math.floor(yearCode) + monthCode + parseInt(centuryCode) + DD - parseInt(leapYearCode);
+    
+    // determine the actual day which will return an integer between 0 and 6
+    var dayInt = parseInt(subTotal%7);
+
+    // determine the name of the day from the array
+    var dayBorn = weekdays[dayInt];
+
+    // determine the name based on the gender selected by user
+    if(male.checked == true){
+                
+	
+        //var dayBorn = dayAkan;
+        //var dayBorn = weekdays[dayAkan];
+        var akanName = maleName[result];
+		let akanSection = document.querySelector('#akan');
+		paraText = akanSection.getElementsByTagName('p');
+		
+		if(isLeapYear == true){
+		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+		} else {
+		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+		}
 	}
+
+	if(female.checked == true){
+		//var akanName = femaleName[dayAkan];
+		//var dayBorn = weekdays[dayAkan];
+		var akanName = femaleName[result];
+		let akanSection = document.querySelector('#akan');
+		paraText = akanSection.getElementsByTagName('p');
+
+		if(isLeapYear == true){
+		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+		} else {
+		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+		}
+	}	
+
 }
