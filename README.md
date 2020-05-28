@@ -21,7 +21,7 @@ A web application that takes a user's birthday and calculates the day of the wee
 * Saturday:Ama
 
 ## Demo
-The app has been published on Github pages, [**check it out!**](https://kitmikai.github.io/biopage)
+The app has been published on Github pages, [**check it out!**](https://kitmikai.github.io/akan)
 
 ## Installation
 * Create a folder in your computer
@@ -32,7 +32,7 @@ The app has been published on Github pages, [**check it out!**](https://kitmikai
 
 ## Built with
 * HTML5
-* JavaScript - with a lot of help from [**repl.it*](https://repl.it)
+* JavaScript - with a lot of help from [**repl.it**](https://repl.it)
 * CSS
 
 ## Image Credits
