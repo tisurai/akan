@@ -2,23 +2,80 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Akan</title>
+    <title>Akan Name Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1>Discover your akan name.</h1>
-    <p id="error"></p>
-    <p id="success"></p>
-
-    <label for="day">Day</label>
-    <input type="text" id="day" name="day" size="2">
-    <label for="month">Month</label>
-    <input type="text" id="month" name="month" size="2">
-    <label for="year">Year</label>
-    <input type="text" id="year" name="year" size="4">
-    <input type="radio" id="female" name="gender" value="Female">
-    <label for="female">Female</label>
-    <input type="radio" id="male" name="gender" value="Male">
-    <label for="male">Male</label>
-  </body>
-  <script src="js/validations.js"></script>
+    <container>
+    <div class="wrapper">
+    
+    <div class="row">
+    <div class="col-md-6 col-spacer">
+    
+    <h2>Discover your akan name</h2>
+    <p class="description">Akan names are derived from the Ghanian culture. Enter your birth date to find out 
+    your akan name.
+    </p>
+    <div id="error-message"></div>
+    
+    <form id="userForm">
+      <div class="input-field text-field">
+        <input type="text" placeholder="DD" id="day" name="day" maxlength="2" autocomplete="off" />
+        <label for="day">Day</label>
+    
+        
+      </div>
+      <div class="input-field text-field">
+        <input type="text" placeholder="MM" id="month" name="month" maxlength="2" autocomplete="off" />
+        <label for="month">Month</label>
+    
+        
+      </div>
+      <div class="input-field text-field">
+        <input type="text" placeholder="YYYY" id="year" name="year" maxlength="4" autocomplete="off" />
+        <label for="month">Year</label>
+        
+      </div>
+      <div class="input-field">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        
+      </div>
+      <div class="input-field">
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <span class="helper-text"></span>
+      </div>
+      <div class="btn">
+      <input type="button" value="Get akan name" onclick="return validation()">
+      </div>
+    
+    </form>
+    
+    </div>
+    
+    <div class="col-md-6 color-col">
+      
+      <div id="akan">
+      <p>" My name is simple, and yet so meaningful.
+         But to this man it is trash...
+         He gives me a name convenient enough to answer his whim...<br>
+         I end up being <br>
+         Maria...<br>
+         I... " <br><span> ~ Nomgqibelo Ncamisile Mnqhibisa </span>
+      </p>
+      </div>
+    </div>
+    
+    </div>
+    </container>
+    
+    <!-- Import Scripts -->
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    </body>
+  
 </html>
