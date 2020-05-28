@@ -51,8 +51,8 @@ body {
     width: 100%;
     border: 1px solid #e0e0e0;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-bottom: 5px;
   
   }
   
@@ -111,6 +111,12 @@ body {
     background-image:url('../img/grass-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .color-col h2 {
+    padding-top: 50px;
+    font-weight: 300;
+    color:white;
   }
 
 .col-spacer {
