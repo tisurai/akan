@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #fece0c;
+  background-image: url('../img/grass.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
