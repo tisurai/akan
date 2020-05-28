@@ -111,9 +111,8 @@ body {
     background-image:url('../img/grass-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-  
   }
 
-  .col-spacer {
+.col-spacer {
     padding: 25px;
 }
