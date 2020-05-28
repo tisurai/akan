@@ -14,18 +14,19 @@ function checkLeapYear(year) {
         // not a leap year
         return valid = false;
     } else if (divisibleBy100 != 0) {
-        //console.log("Is a Leap year");
+        //Is a Leap year
         return valid = true;
     } else if (divisibleBy400 != 0) {
-        //console.log("Is not Leap year.");
+        //Is not Leap year.
         return valid = false;
     } else {
-        //console.log("Not a leap year.");
+        //Not a leap year
         return valid = true;
     } 
 }
     
 function compareDate(birthDate,currentDate){
+    // determine if the date is not in the future
     var time1 = new Date(birthDate); 
     var today = new Date();
     var diff = today - time1;
@@ -33,18 +34,14 @@ function compareDate(birthDate,currentDate){
     valid = true;
     
     if (diff > 0){
-       // output = 'Date1 > Date2';
        return valid = false;
     }else if (diff < 0){
-        //output = 'Date2 > Date1';
         return valid = true;
     }else{
-        //output = 'Date1 = Date2';
         return valid = true;
     }
 
 }
-    
 
 function checkValidDays(month,day,year) {
     var validDays = ["31","28","31","30","30","30","31","31","30","31","30","31"];
@@ -61,14 +58,11 @@ function checkValidDays(month,day,year) {
     // decrement to adjust with array index. Important!
     intMonth--;
     validDate = validDays[intMonth];
-    //console.log(day);
-    //console.log(month);
-    //console.log(validDate);
 
     // if the month selected is february, and
     // date is 29, check if it was a leap year
     if(intMonth === 1 && intDay === 29 ){
-    //year = prompt("Please enter year: ");
+    
         if (checkLeapYear(intYear) === true) {
             //console.log("Must have been a leap year");
             return valid = true;
@@ -188,7 +182,6 @@ function getName() {
     // determine the name based on the gender selected by user
     if(male.checked == true){
                 
-
         //var dayBorn = dayAkan;
         //var dayBorn = weekdays[dayAkan];
         var akanName = maleName[dayInt];
@@ -283,6 +276,7 @@ function validation() {
         return false;
     }
 
+    // check if the date is in the future
     if(isFutureDate == true){
         text="Birthday must be in the past";
 	    errorMessage.style.padding = "10px"; 
