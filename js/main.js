@@ -213,7 +213,7 @@ function getName() {
     // determine the name based on the gender selected by user
     if(male.checked == true){
                 
-	
+
         //var dayBorn = dayAkan;
         //var dayBorn = weekdays[dayAkan];
         var akanName = maleName[dayInt];
