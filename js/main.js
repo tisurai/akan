@@ -59,3 +59,72 @@ function checkValidDays(month,day,year) {
   }
   
 }
+
+function checkFloat(number) {
+    // check if the user input is a float data type
+    // return true if input is of float data type
+  
+    var floatingPoint = false;
+    if (!isNaN(number) && number.toString().indexOf('.') != -1) {
+      //console.log("this is a numeric value and I\"m sure it is a float.");
+      floatingPoint = true;
+      return floatingPoint;
+    }
+  
+  } 
+
+  function validation() {
+
+	var dayTxt = document.getElementById("day").value;
+	var monthTxt = document.getElementById("month").value;
+	var yearTxt = document.getElementById("year").value;
+	var male = document.getElementById("male");
+	var female = document.getElementById("female");
+    var form = document.getElementById("userForm");
+	var errorMessage = document.getElementById("error-message");
+
+	// convert to integer data types
+    day = parseInt(dayTxt);
+    month = parseInt(monthTxt);
+    year = parseInt(yearTxt);
+	
+	var text = " ";
+	var isFloatDay = checkFloat(day);
+    var isFloatMonth = checkFloat(month);
+	var isFloatYear = checkFloat(year);
+	var isLeapYear = checkLeapYear(year);
+    var isValidDay = checkValidDays(month,day,year);
+
+	if(day.length < 1 || day <= 0 || isFloatDay == true || isValidDay == false ) {
+        text="Please Enter Day";
+	    errorMessage.style.padding = "10px"; 
+        errorMessage.innerHTML = text;
+        return false;
+    }
+
+	if(month.length < 1 || month <= 0 || isNaN(month) || isFloatMonth == true) {
+        text="Please Enter Month";
+	    errorMessage.style.padding = "10px"; 
+        errorMessage.innerHTML = text;
+        return false;
+    } 
+
+	if(year.length < 4 || year <= 0 || isFloatYear == true) {
+        text="Please Enter Year";
+	    errorMessage.style.padding = "10px"; 
+        errorMessage.innerHTML = text;
+        return false;
+    }
+
+	if(male.checked == false && female.checked == false) {
+        text="Please Select Gender";
+        errorMessage.style.padding = "10px"; 
+        errorMessage.innerHTML = text;
+        return false;
+	}
+
+	getName();
+	errorMessage.style.padding = "0px";
+	errorMessage.innerHTML = "";
+
+}
