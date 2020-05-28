@@ -31,7 +31,7 @@ function compareDate(birthDate,currentDate){
     var today = new Date();
     var diff = today - time1;
 
-    valid = true;
+    //valid = true;
     
     if (diff > 0){
        return valid = false;
@@ -182,17 +182,18 @@ function getName() {
     // determine the name based on the gender selected by user
     if(male.checked == true){
                 
-        //var dayBorn = dayAkan;
-        //var dayBorn = weekdays[dayAkan];
         var akanName = maleName[dayInt];
-		let akanSection = document.querySelector('#akan');
+        let akanSection = document.querySelector('#akan');
+        akanTitle = document.getElementsByTagName('h2');
 		paraText = akanSection.getElementsByTagName('p');
         
         // write to the HTML document
 		if(isLeapYear == true){
-		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+            paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+            akanTitle[1].innerHTML = akanName;
 		} else {
-		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+            paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+            akanTitle[1].innerHTML = akanName;
 		}
 	}
 
@@ -277,7 +278,7 @@ function validation() {
     }
 
     // check if the date is in the future
-    if(isFutureDate == true){
+    if(isFutureDate === false){
         text="Birthday must be in the past";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
