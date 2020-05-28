@@ -24,7 +24,27 @@ function checkLeapYear(year) {
         return valid = true;
     } 
 }
+    
+function compareDate(birthDate,currentDate){
+    var time1 = new Date(birthDate); 
+    var today = new Date();
+    var diff = today - time1;
 
+    valid = true;
+    
+    if (diff > 0){
+       // output = 'Date1 > Date2';
+       return valid = false;
+    }else if (diff < 0){
+        //output = 'Date2 > Date1';
+        return valid = true;
+    }else{
+        //output = 'Date1 = Date2';
+        return valid = true;
+    }
+
+}
+    
 
 function checkValidDays(month,day,year) {
     var validDays = ["31","28","31","30","30","30","31","31","30","31","30","31"];
@@ -214,7 +234,10 @@ function validation() {
     day = parseInt(dayTxt);
     month = parseInt(monthTxt);
     year = parseInt(yearTxt);
-	
+    
+    //build birthday DD-MM-YYYY
+    var birthDayString = dayTxt + "-" + monthTxt + "-" + yearTxt;
+    
 	var text = " ";
 	var isFloatDay = checkFloat(day);
     var isFloatMonth = checkFloat(month);
@@ -222,6 +245,7 @@ function validation() {
     var isLeapYear = checkLeapYear(year);
     var isValidMonth = checkValidMonth(month);
     var isValidDay = checkValidDays(month,day,year);
+    var isFutureDate = compareDate(birthDayString);
     
 
 	if(day.length < 1 || day <= 0 || isFloatDay == true ) {
@@ -254,6 +278,13 @@ function validation() {
 
 	if(year.length < 4 || year <= 0 || isFloatYear == true) {
         text="Please Enter Year";
+	    errorMessage.style.padding = "10px"; 
+        errorMessage.innerHTML = text;
+        return false;
+    }
+
+    if(isFutureDate == true){
+        text="Birthday must be in the past";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
         return false;
