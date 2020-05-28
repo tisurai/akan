@@ -216,10 +216,11 @@ function getName() {
 	
         //var dayBorn = dayAkan;
         //var dayBorn = weekdays[dayAkan];
-        var akanName = maleName[result];
+        var akanName = maleName[dayInt];
 		let akanSection = document.querySelector('#akan');
 		paraText = akanSection.getElementsByTagName('p');
-		
+        
+        // write to the HTML document
 		if(isLeapYear == true){
 		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
 		} else {
@@ -230,9 +231,11 @@ function getName() {
 	if(female.checked == true){
 		//var akanName = femaleName[dayAkan];
 		//var dayBorn = weekdays[dayAkan];
-		var akanName = femaleName[result];
+		var akanName = femaleName[dayInt];
 		let akanSection = document.querySelector('#akan');
-		paraText = akanSection.getElementsByTagName('p');
+        paraText = akanSection.getElementsByTagName('p');
+        
+        // write to the HTML document
 
 		if(isLeapYear == true){
 		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
