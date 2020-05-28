@@ -11,7 +11,7 @@ function checkLeapYear(year) {
     divisibleBy400 = year%400;
 
     if (divisibleBy4 != 0) {
-      // not a leap year
+        // not a leap year
         return valid = false;
     } else if (divisibleBy100 != 0) {
         //console.log("Is a Leap year");
@@ -27,53 +27,54 @@ function checkLeapYear(year) {
 
 
 function checkValidDays(month,day,year) {
-  var validDays = ["31","28","31","30","30","30","31","31","30","31","30","31"];
+    var validDays = ["31","28","31","30","30","30","31","31","30","31","30","31"];
 
-  // check if the user has selected valid day for that month
-  // e.g. April has 30 days not 31
-  // get the valid date of the month
-  valid = true;
-  // convert variables to integers
-  intMonth = parseInt(month);
-  intDay = parseInt(day);
-  intYear = parseInt(year);
-// decrement to adjust with array index
-  intMonth--;
-  validDate = validDays[intMonth];
-  //console.log(day);
-  //console.log(month);
-  //console.log(validDate);
+    // check if the user has selected valid day for that month
+    // e.g. April has 30 days not 31
+    // get the valid date of the month
+    valid = true;
+    // convert variables to integers
+    intMonth = parseInt(month);
+    intDay = parseInt(day);
+    intYear = parseInt(year);
 
-  // if the month selected is february, and
-  // date is 29, check if it was a leap year
-  if(intMonth === 1 && intDay === 29 ){
+    // decrement to adjust with array index. Important!
+    intMonth--;
+    validDate = validDays[intMonth];
+    //console.log(day);
+    //console.log(month);
+    //console.log(validDate);
+
+    // if the month selected is february, and
+    // date is 29, check if it was a leap year
+    if(intMonth === 1 && intDay === 29 ){
     //year = prompt("Please enter year: ");
     if (checkLeapYear(intYear) === true) {
-      //console.log("Must have been a leap year");
-      return valid = true;
+        //console.log("Must have been a leap year");
+        return valid = true;
     }
-  } else {
+    } else {
     if (intDay <= 0 || intDay > 31){
-      return valid = false;
+        return valid = false;
     }
-  }
+    }
   
 }
 
 function checkFloat(number) {
     // check if the user input is a float data type
     // return true if input is of float data type
-  
+
     var floatingPoint = false;
     if (!isNaN(number) && number.toString().indexOf('.') != -1) {
-      //console.log("this is a numeric value and I\"m sure it is a float.");
-      floatingPoint = true;
-      return floatingPoint;
+        //console.log("this is a numeric value and I\"m sure it is a float.");
+        floatingPoint = true;
+        return floatingPoint;
     }
-  
-  } 
 
-  function validation() {
+} 
+
+function validation() {
 	var dayTxt = document.getElementById("day").value;
 	var monthTxt = document.getElementById("month").value;
 	var yearTxt = document.getElementById("year").value;
@@ -127,4 +128,34 @@ function checkFloat(number) {
 	errorMessage.style.padding = "0px";
 	errorMessage.innerHTML = "";
 
+}
+
+function getName() {
+	// The formula used to find the date is  (yearcode + monthcode + centurycode + date - leapyearcode) % 7
+	var day = document.getElementById("day").value;
+	var month = document.getElementById("month").value;
+	var year = document.getElementById("year").value;
+	var male = document.getElementById("male");
+	var female = document.getElementById("female");
+	var textCC = year.slice(0,2);
+	var textYY = year.slice(2,4);  
+	var textMM = month;
+	var textDD = day;
+	var CC = parseInt(textCC);
+	var YY = parseInt(textYY);
+	var MM = parseInt(textMM);
+	var DD = parseInt(textDD);
+	var yearCode = 0;
+	var monthCode = 0;
+	var centuryCode = 0;
+	var leapYearCode = 0;
+	//var dateNumber = day;
+	var isLeapYear = checkLeapYear(year);
+	var formulaDate = 0;
+
+	var maleName = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+	var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+	var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var monthCodeArray = ["0","3","3","6","1","4","6","2","5","0","3","5"];
+    
 }
