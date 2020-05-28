@@ -157,5 +157,45 @@ function getName() {
 	var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
 	var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var monthCodeArray = ["0","3","3","6","1","4","6","2","5","0","3","5"];
-    
+
+    // determine the year code
+    // if the year is 00, e.g. 1900 set year code to zerp
+    // else calculate the year code.
+	if(YY == 0){
+	    yearCode = 0;
+	} else {
+	    yearCode = (YY + (YY/4))%7;
+	}
+
+    // adjust month to align with array index
+    // and get the month code from the array
+	MM--;
+	monthCode = parseInt(monthCodeArray[MM]);
+   
+    // get the century code
+    // 17C and 21C have code 4
+    // 18C and 22C have code 2
+    // 19C and 23C have code 0, 20C has code 6 
+
+	if(CC == 17 || CC == 21){
+  	    centuryCode = 4;
+	}
+
+	if(CC == 18 || CC == 22){
+  	    centuryCode = 2;
+	}
+	if(CC == 19 || CC == 23){
+  	    centuryCode = 0;
+	}
+	if(CC == 20){
+	    centuryCode = 6;
+	}
+
+	// determine if it is a leapyear
+    // a leap year is assigned a 1, for January and February
+    // we need to adjust the days by subtracting 1 from the formula
+
+	if((isLeapYear == true) && (monthCode == 0 || monthCode == 1)){
+  	    leapYearCode = 1;
+	}
 }
