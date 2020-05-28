@@ -46,4 +46,50 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .wrapper .input-field input[type="text"] {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+  }
+  
+  .wrapper .input-field input[type="radio"] {
+     margin: 10px;
+   
+  }
+  
+  .wrapper .btn input[type="button"] {
+    border: 0px;
+    margin-top: 10px;
+    margin-left: 25px;
+    padding: 15px 20px 15px 20px;
+    width: 100%;
+    background: #fece0c;
+    color: #332902;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    
+  }
+
+  
+.wrapper #error-message {
+    margin-bottom: 20px;
+    padding: 0px;
+    background: #fe8b8e;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+  
+  .description {
+    padding: 15px 20px 10px 20px;
+    line-height: 1.5em;
+  
+  }
   
