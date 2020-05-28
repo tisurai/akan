@@ -33,11 +33,11 @@ function checkValidDays(month,day,year) {
   // e.g. April has 30 days not 31
   // get the valid date of the month
   valid = true;
-  // decrement to adjust with array index
+  // convert variables to integers
   intMonth = parseInt(month);
   intDay = parseInt(day);
   intYear = parseInt(year);
-
+// decrement to adjust with array index
   intMonth--;
   validDate = validDays[intMonth];
   //console.log(day);
@@ -74,7 +74,6 @@ function checkFloat(number) {
   } 
 
   function validation() {
-
 	var dayTxt = document.getElementById("day").value;
 	var monthTxt = document.getElementById("month").value;
 	var yearTxt = document.getElementById("year").value;
@@ -123,6 +122,7 @@ function checkFloat(number) {
         return false;
 	}
 
+    // calculate the name
 	getName();
 	errorMessage.style.padding = "0px";
 	errorMessage.innerHTML = "";
