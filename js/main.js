@@ -184,16 +184,21 @@ function getName() {
                 
         var akanName = maleName[dayInt];
         let akanSection = document.querySelector('#akan');
+        let buttonObject = document.querySelector('.btn');
         akanTitle = document.getElementsByTagName('h2');
-		paraText = akanSection.getElementsByTagName('p');
+        paraText = akanSection.getElementsByTagName('p');
         
         // write to the HTML document
 		if(isLeapYear == true){
             paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
             akanTitle[1].innerHTML = akanName;
+            buttonObject.innerHTML = "<input type=\"button\" value=\"Reset\" onclick=\"location.reload();\">";
+            
 		} else {
             paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
             akanTitle[1].innerHTML = akanName;
+            buttonObject.innerHTML = "<input type=\"button\" value=\"Reset\" onclick=\"location.reload();\">";
+            
 		}
 	}
 
@@ -209,10 +214,12 @@ function getName() {
 
 		if(isLeapYear == true){
             akanTitle[1].innerHTML = akanName;
-		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+            paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName + "<br> It was a leap year!";
+            buttonObject.innerHTML = "<input type=\"button\" value=\"Reset\" onclick=\"location.reload();\">";
 		} else {
             akanTitle[1].innerHTML = akanName;
-		    paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+            paraText[0].innerHTML = "You were born on a " + dayBorn + ", <br> your Akan name is " + akanName;
+            buttonObject.innerHTML = "<input type=\"button\" value=\"Reset\" onclick=\"location.reload();\">";
 		}
 	}	
 
