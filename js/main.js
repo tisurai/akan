@@ -281,7 +281,7 @@ function validation() {
     }
 
     // check if the date is in the future
-    if(isFutureDate === false){
+    if(isFutureDate === true){
         text="Birthday must be in the past";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
