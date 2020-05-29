@@ -245,7 +245,7 @@ function validation() {
     var isFutureDate = compareDate(birthDayString);
     
 
-	if(day.length < 1 || day <= 0 || isFloatDay == true ) {
+	if(day.length < 1 || day <= 0 || isNaN(month) || isFloatDay == true ) {
         text="Please Enter Day";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
@@ -273,7 +273,7 @@ function validation() {
         return false;
     }
 
-	if(year.length < 4 || year <= 0 || isFloatYear == true) {
+	if(year.length < 4 || year <= 0 || isNaN(month) || isFloatYear == true) {
         text="Please Enter Year";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
