@@ -25,20 +25,18 @@ function checkLeapYear(year) {
     } 
 }
     
-function compareDate(birthDate,currentDate){
+function compareDate(birthDate){
     // determine if the date is not in the future
     var time1 = new Date(birthDate); 
     var today = new Date();
     var diff = today - time1;
 
-    //valid = true;
-    
     if (diff > 0){
        return valid = false;
     }else if (diff < 0){
         return valid = true;
     }else{
-        return valid = true;
+        return valid = false;
     }
 
 }
@@ -80,7 +78,7 @@ function checkValidMonth(month){
     valid = true;
     intMonth = parseInt(month);
 
-    if(intMonth > 12){
+    if(intMonth <=0 || intMonth > 12){
         return valid = false;
     }
 
@@ -232,7 +230,6 @@ function validation() {
 	var yearTxt = document.getElementById("year").value;
 	var male = document.getElementById("male");
 	var female = document.getElementById("female");
-    var form = document.getElementById("userForm");
 	var errorMessage = document.getElementById("error-message");
 
 	// convert to integer data types
@@ -242,21 +239,19 @@ function validation() {
     
     //build birthday DD-MM-YYYY
     var birthDayString = dayTxt + "-" + monthTxt + "-" + yearTxt;
-    
 	var text = " ";
 	var isFloatDay = checkFloat(day);
     var isFloatMonth = checkFloat(month);
 	var isFloatYear = checkFloat(year);
-    var isLeapYear = checkLeapYear(year);
     var isValidMonth = checkValidMonth(month);
-    var isValidDay = checkValidDays(month,day,year);
+    var isValidDay = checkValidDays(monthTxt,dayTxt,yearTxt);
     var isFutureDate = compareDate(birthDayString);
-    
 
-	if(day.length < 1 || day <= 0 || isNaN(month) || isFloatDay == true ) {
+	if(dayTxt.length < 1 || isNaN(day) || isFloatDay == true ) {
         text="Please Enter Day";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
+        dayTxt.innerHTML = "";
         return false;
     }
 
@@ -267,7 +262,7 @@ function validation() {
         return false;
     }
 
-	if(month.length < 1 || month <= 0 || isNaN(month) || isFloatMonth == true) {
+	if(monthTxt.length < 1 || isNaN(month) || isFloatMonth == true) {
         text="Please Enter Month";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
@@ -281,7 +276,7 @@ function validation() {
         return false;
     }
 
-	if(year.length < 4 || year <= 0 || isNaN(month) || isFloatYear == true) {
+	if(yearTxt.length < 4 || year <= 0 || isNaN(year) || isFloatYear == true) {
         text="Please Enter Year";
 	    errorMessage.style.padding = "10px"; 
         errorMessage.innerHTML = text;
