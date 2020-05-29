@@ -206,8 +206,9 @@ function getName() {
 		//var akanName = femaleName[dayAkan];
 		//var dayBorn = weekdays[dayAkan];
         var akanName = femaleName[dayInt];
+        let akanSection = document.querySelector('#akan');
+        let buttonObject = document.querySelector('.btn');
         akanTitle = document.getElementsByTagName('h2');
-		let akanSection = document.querySelector('#akan');
         paraText = akanSection.getElementsByTagName('p');
         
         // write to the HTML document
