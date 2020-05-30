@@ -152,10 +152,12 @@ function getName() {
 
 	if(CC == 18 || CC == 22){
   	    centuryCode = 2;
-	}
+    }
+    
 	if(CC == 19 || CC == 23){
   	    centuryCode = 0;
-	}
+    }
+    
 	if(CC == 20){
 	    centuryCode = 6;
 	}
