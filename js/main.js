@@ -64,6 +64,8 @@ function checkValidDays(month,day,year) {
         if (checkLeapYear(intYear) === true) {
             //console.log("Must have been a leap year");
             return valid = true;
+        } else {
+            return valid = false;
         }
     } else {
         if (intDay <= 0 || intDay > 31){
