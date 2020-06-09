@@ -260,12 +260,20 @@ function validation() {
     }
 
     if(isValidDay == false) {
-        text="Day is between 1 - 31";
-	    errorMessage.style.padding = "10px"; 
-        errorMessage.innerHTML = text;
-        return false;
-    }
 
+        if(month == 2 && day == 29){
+            text="Day is between 1 - 28";
+            errorMessage.style.padding = "10px"; 
+            errorMessage.innerHTML = text;
+            return false;
+        } else {
+            text="Day is between 1 - 31";
+            errorMessage.style.padding = "10px"; 
+            errorMessage.innerHTML = text;
+            return false;
+        }
+
+    }
 	if(monthTxt.length < 1 || isNaN(month) || isFloatMonth == true) {
         text="Please Enter Month";
 	    errorMessage.style.padding = "10px"; 
@@ -309,4 +317,3 @@ function validation() {
 	errorMessage.innerHTML = "";
 
 }
-
