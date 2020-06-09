@@ -68,11 +68,19 @@ function checkValidDays(month,day,year) {
             return valid = false;
         }
     } else {
-        if (intDay <= 0 || intDay > 31){
+        if (intDay <= 0 || intDay > validDate){
             return valid = false;
         }
     }
   
+}
+
+function getValidDay(month){
+    // Determine the valid days for the month and retun the value
+    var validMonthDays = ["31","28","31","30","30","30","31","31","30","31","30","31"];
+    month--;
+    return validEndDate = validMonthDays[month];
+
 }
 
 function checkValidMonth(month){
@@ -250,6 +258,7 @@ function validation() {
     var isValidMonth = checkValidMonth(month);
     var isValidDay = checkValidDays(monthTxt,dayTxt,yearTxt);
     var isFutureDate = compareDate(birthDayString);
+    var endMonthDate = getValidDay(month);
 
 	if(dayTxt.length < 1 || isNaN(day) || isFloatDay == true ) {
         text="Please Enter Day";
@@ -267,7 +276,7 @@ function validation() {
             errorMessage.innerHTML = text;
             return false;
         } else {
-            text="Day is between 1 - 31";
+            text="Day is between 1 - " + endMonthDate;
             errorMessage.style.padding = "10px"; 
             errorMessage.innerHTML = text;
             return false;
