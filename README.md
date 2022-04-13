@@ -1,6 +1,6 @@
 ![Page design](./img/page-small.JPG)
 # Akan Name Calculator
-A web application that takes a user's birthday and calculates the day of the week they were born and then depending on their gender shows their Akan Name. Akan names are derived from Ghanian culture in West Africa. Children are given their first name as a 'day name' which corresponds to the day in the week they were born.
+A web application that takes a user's birthday and calculates the day of the week they were born, and then depending on their gender shows their Akan Name. Akan names are derived from Ghanian culture in West Africa. Children are given their first name as a 'day name' which corresponds to the day in the week they were born.
 
 ### Day names for male
 * Sunday:Kwasi
@@ -24,10 +24,13 @@ A web application that takes a user's birthday and calculates the day of the wee
 The app has been published on Github pages, [**check it out!**](https://kitmikai.github.io/akan)
 
 ## Installation
-* Create a folder in your computer
-* cd <folder-you-created>
-* Clone this repo https://github.com/kitmikai/akan.git in this folder
-* cd akan
+Follow the steps below to run this HTML site on your laptop
+```
+mkdir project
+cd project
+git clone https://github.com/tisurai/akan
+cd akan
+```
 * Open the file index.html in your browser
 
 ## Built with
