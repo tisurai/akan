@@ -213,8 +213,6 @@ function getName() {
 	}
 
 	if(female.checked == true){
-		//var akanName = femaleName[dayAkan];
-		//var dayBorn = weekdays[dayAkan];
         var akanName = femaleName[dayInt];
         let akanSection = document.querySelector('#akan');
         let buttonObject = document.querySelector('.btn');
